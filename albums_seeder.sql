@@ -35,3 +35,4 @@ VALUES ('Micheal Jackson', 'Thriller', 1982, 47.3, 'Pop, rock, R&B'),
         ('Guns N'' Roses', 'Appetite for Destruction', 1987, 21.6, 'Hard rock');
 
 SELECT * FROM albums;
+
