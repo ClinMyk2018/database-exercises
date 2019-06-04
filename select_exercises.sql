@@ -2,28 +2,28 @@ USE codeup_test_db;
 
 # SELECT * FROM albums WHERE id = BETWEEN 33 AND 64;
 
-SELECT *
+select name as 'All Pink Floyd albums.', Artist as 'Band'
 FROM albums
 WHERE artist = 'Pink Floyd';
 
-select *
+select name as 'Song', Artist as 'Band'
 from albums
 where name = 'Sgt. Pepper''s Lonely Hearts Club Band';
 
-select *
+select genre as 'The genre for Nevermind'
 from albums
-where genre = 'Grunge, alternative rock';
+where name = 'Nevermind';
 
-select *
+select name as 'Albums released in the 1990s', Artist, release_date
 from albums
 where release_date >= 1990
 and release_date <= 1999;
 
-select *
+select name as "Albums with more than 20 mil sales", sales
 from albums
 where sales >= 20;
 
-select *
+select name 'Rock albums', genre
 from albums
-where genre = 'rock';
+where genre like '%rock%';
 

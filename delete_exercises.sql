@@ -1,18 +1,29 @@
 USE codeup_test_db;
 
-select 'All albums in your table.' as 'Caption';
-select *
+select artist 'Name of Artist', name 'Name of Album'
 from albums;
 
-select 'All albums released before 1980' as 'Caption';
-select *
+select artist 'Name of Artist', name 'Name of Album', release_date
 from albums
 where release_date > 1991;
 
-select *
+select name, genre
 from albums
-where genre = 'disco';
+where genre like '%disco%';
 
-select *
+select name 'Whitney Houston Songs', release_date
 from albums
-where artist = 'Whitney Houston'
+where artist = 'Whitney Houston';
+
+
+delete
+from albums
+where release_date > 1991;
+
+delete
+from albums
+where genre like '%disco%';
+
+delete
+from albums
+where artist = 'Whitney Houston';
