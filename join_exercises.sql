@@ -36,7 +36,7 @@ and t.to_date = '9999-01-01'
     order by Title;
 
 # Current salary of managers
-SELECT d.dept_name as Department_Name,
+SELECT distinct d.dept_name as Department_Name,
     CONCAT(employees.first_name, ' ', employees.last_name) as Manager,
        s.salary as Current_Salary
 from employees
