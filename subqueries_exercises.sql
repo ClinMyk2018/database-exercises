@@ -8,15 +8,16 @@ WHERE hire_date IN (
     WHERE employees.emp_no = '101010'
 );
 
-SELECT title as Job_Titles
+SELECT DISTINCT count(title) as Total_Job_Titles, title as Unique_Titles
 from titles
-    WHERE emp_no IN
-         (
-    SELECT emp_no
-             from employees
-             where first_name = 'Aamod'
-         );
-# Is this all....?
+WHERE emp_no IN
+      (
+        SELECT emp_no
+        FROM employees
+        WHERE first_name = 'Aamod'
+         )
+group by title;
+
 
 SELECT first_name first_name, last_name last_name
 from employees

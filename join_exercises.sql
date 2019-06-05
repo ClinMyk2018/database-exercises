@@ -46,7 +46,7 @@ from employees
     ON d.dept_no = de.dept_no
     join salaries s
     ON employees.emp_no = s.emp_no
-where de.to_date = '9999-01-01'
-group by Department_Name
+where s.to_date >now()
+AND de.to_date > now()
 order by Department_Name;
 # NOT  DONE
