@@ -49,4 +49,3 @@ from employees
 where s.to_date >now()
 AND de.to_date > now()
 order by Department_Name;
-# NOT  DONE
