@@ -28,7 +28,7 @@ where emp_no IN(
     AND gender = 'F'
 );
 
-SELECT dept_name as Department_Name
+SELECT first_name, last_name as Department_Name
 FROM employees
 WHERE emp_no IN(
     SELECT emp_no
