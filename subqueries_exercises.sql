@@ -24,17 +24,24 @@ from employees
 where emp_no IN(
     SELECT emp_no
     FROM dept_manager
-    WHERE to_date = '9999-01-01'
+    WHERE to_date > curdate()
     AND gender = 'F'
 );
 
-SELECT first_name, last_name as Department_Name
-FROM employees
-WHERE emp_no IN(
-    SELECT emp_no
-    FROM dept_manager
-    WHERE to_date = '9999-01-01'
-    AND gender = 'F'
-    );
+
+SELECT dept_name
+from departments
+where dept_no in (
+    select dept_no
+    from dept_emp
+    where emp_no in (
+        select emp_no
+        FROM employees
+        where emp_no in (
+            SELECT emp_no
+            FROM dept_manager
+            WHERE to_date > curdate()
+              AND gender = 'F'
+        )));
 
 
